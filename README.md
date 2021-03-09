@@ -1,12 +1,12 @@
 # YoMo-sink-TiDB-example
 
-TiDB 🙌 YoMo. This exmpale demonstrates how to integrate Tidb to YoMo and bulk insert data into Tidb after stream processing.
+TiDB 🙌 YoMo. This exmpale demonstrates how to integrate TiDB to YoMo and bulk insert data into TiDB after stream processing.
 
-## About Tidb
+## About TiDB
 
 TiDB ("Ti" stands for Titanium) is an open-source NewSQL database that supports Hybrid Transactional and Analytical Processing (HTAP) workloads. It is MySQL compatible and features horizontal scalability, strong consistency, and high availability.
 
-For more information, please visit [Tidb homepage](https://github.com/pingcap/tidb).
+For more information, please visit [TiDB homepage](https://github.com/pingcap/tidb).
 
 ## About YoMo
 
@@ -61,7 +61,7 @@ type NoiseData struct {
 	From  string  `y3:"0x13"`
 }
 
-// save data to tidb
+// save data to TiDB
 var saveDocs = func(_ context.Context, i interface{}) (interface{}, error) {
 	execstring := "INSERT INTO noises(`noise`, `time`) VALUES "
 
@@ -80,7 +80,7 @@ var saveDocs = func(_ context.Context, i interface{}) (interface{}, error) {
 		return nil, err
 	}
 
-	return fmt.Sprintf("⚡️ %d successfully stored in the tidb", len(i.([]interface{}))), nil
+	return fmt.Sprintf("⚡️ %d successfully stored in the TiDB", len(i.([]interface{}))), nil
 }
 
 // y3 callback
@@ -113,7 +113,7 @@ func Handler(rxstream rx.RxStream) rx.RxStream {
 
 ```
 
-### Run Tidb with Docker
+### Run TiDB with Docker
 
 ```bash
 => docker run --name tidb-server -d -v /tidb/data:/tmp/tidb -p 4000:4000 -p 10080:10080 pingcap/tidb:latest
