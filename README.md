@@ -1,6 +1,6 @@
-# TIDBCONNECTOR
+# YoMo-sink-TiDB-example
 
-Tidb 🙌 YoMo. Demonstrates how to integrate Tidb to YoMo and bulk insert data into Tidb after stream processing.
+TiDB 🙌 YoMo. This exmpale demonstrates how to integrate Tidb to YoMo and bulk insert data into Tidb after stream processing.
 
 ## About Tidb
 
